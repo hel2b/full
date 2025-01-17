@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제어문</title>
+    <script src="../js/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <input id="age" type="number" placeholder="나이입력">
+    <!-- required는 form요소(method 속성)이 있을 때만 작동 -->
+    <button type="button" id="btn">제이쿼리 성인인증</button>
+    <button type="button" onclick="confirm()">성인인증</button>
+    <p></p>
+    <!-- 성인인증 버튼을 클릭하면 confrirm() 함수를 호출()실행한다. -->
+    <script>
+        function confirm(){//confirm() 함수 정의
+        var age=document.getElementById('age').value;
+    //getElementById('아이디명')는 아이디명으로 요소를 선택한다.
+    //value 속성은 입력폼의 입력한 값을 얻는다.
+
+    //var result = '성인이 아닙니다.';
+
+    /*
+        if(age>19){
+            result='성인입니다.';
+         }  
+//단순 if문(조건이 하나)의 경우 코드블럭 생략이 가능
+*/
+
+        if(age==''){
+            alert('나이를 입력하세요.');
+            document.getElementById('#age').focus();
+        }
+        var result='';
+         (age>19)? result='성인입니다.' : result='성인이 아닙니다.';
+
+            document.write(result);
+        }
+
+        
+
+        $('#btn').click(function(){
+            var age=$('#age').val();
+            var result = '성인이 아닙니다.';
+
+            if(age>19){
+                result='성인입니다.';
+            } 
+            
+            if(age==''){
+                result='나이를 입력하세요.';
+                $('#age').focus();
+            }
+
+            $('p').text(result);
+        });
+    </script>
+</body>
+</html>
