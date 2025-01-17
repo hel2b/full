@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+.slides li{
+height:400px; background:#eee; border-radius:10px; overflow:hidden;
+/*overflow:hidden 부모요소를 벗어나는 요소들을 숨김*/
+}
+.fs-itemBg{
+    height:200px;
+}
+.fs-itemBg1{
+    background:url('../imgs/slide1.jpg')no-repeat center center; background-size:cover;
+}
+.fs-itemContents{
+    padding:30px;
+}
+.fs-itemContents h3{
+font-size:24px; color:#36f; font-weight:600;
+text-transform:uppercase;
+white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.fs-itemContents p{
+padding:5px 0 10px 0;
+}
+/* a 태그 마진 탑으로 줘도 되지만
+p태그 패딩 바텀으로 줘도 됨 */
+.fs-itemContents a.fs-btn{
+display:inline-block;
+/* 인라인요소는 마진 패딩이 안먹는다. */
+padding:8px 15px;
+border:2px solid #36f; border-radius:10px;
+transform: translate(50%);
+}
+/* 부모요소부터  선택해야 더 확실하게 스타일 적용이 가능 */
