@@ -1,0 +1,54 @@
+<!--
+글자 서체 지정
+1. font.google.com에서 폰트를 적용하는 방법
+2.사용할 웹 폰트를 직접 제작한 후 서버에 저장하여 적용하는 방법
+
+로렘입숨(더미텍스트)
+-->
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글자속성</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+        /*font-family: Gowun Batang;
+
+        */
+        .gb{
+            width: 350px;
+            font-family: "Gowun Batang", serif; font-size: 24px;
+            
+        }
+        .nt{
+            font-family: "Noto Sans", serif; font-size: 42px;
+        }
+
+        /* 웹 폰트를 직접 만들어 사용할 때는 @font-face를 사용한다. */
+        @font-face{
+            font-family: chosunSm;
+            src: url('./fonts/ChosunSm.eot');
+            src: url('./fonts/ChosunSm.woff') format('woff');
+            /* 크로스 브라우징 코딩 작업 */
+        }
+        .face{
+            font-family: "chosunSm"; font-size: 24px; color: #06f; font-weight: bold; text-align: center;
+            text-transform: capitalize; letter-spacing: 3px;
+            line-height: 38px;
+        }
+        .face span{
+            color: #fc0; text-shadow: 1px 1px 2px #000;
+        }
+    </style>
+</head>
+<body>
+    <p class="gb">너윽노는 얼다는 이욱 더견으려면 이쯔탈으 룬더슴거니 작넬개를. 두가기 쾼더켤노샐게 미뜨히훌토가 가마리스부우와 새찐어요 기와를 뚸메모다</p>
+    <p class="face">Lorem <span>Ipsum</span> is simply dummy text of the printing and typesetting industry.</p>
+    <p class="nt">시우드는 거홰어, 주흥어하, 군어쇽자 여오으려 후교탈뚜너다 즙츠하샐일 셔뭊사더, 로열이다. 솜거딘관드어요 탄닥으로부터 덯랏 댶잘을 스즌외산돈을 귬정업 솔진뷔자면서 읐팰샌제는 알더나 앳로거고 이개아즈를</p>
+
+</body>
+</html>

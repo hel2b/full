@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+요소- 블록형, 인라인형(a,span,)
+블록형- 너비값이 100%(기본값),높이값이 0, 줄바꿈,
+레이아웃 스타일 속성(height,width)이 적용.
+인라인형- 너비값이 0, 줄바꿈x, 높이값이 0, 레이아웃 스타일 속성 적용 안됨.
+
+1.시맨틱 태그- header, nav, section, article, aside, footer
+2. div (블록형)
+3. span (인라인형) h태그와 p태그 내부에 사용한다.
+-->
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공간분할태그</title>
+    <style>
+        /*선택자{스타일속성:스타일값;}*/
+        span{
+            color: orange; 
+        }
+        .pbox{
+           display: flex; height: 200px; background: orange;
+        }
+        .left{
+            width: 50%; height: 100px; background: lightblue;
+        }
+        .right{
+            width: 50%; height: 100px; background: lightcoral;
+        }
+        h3, p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>공간 <span>분할</span> 태그</h2>
+    <div class="pbox">
+        <div class="left">
+            <h3>left</h3>
+            <p>왼쪽 박스이다.</p>
+        </div>
+        <div class="right">
+            <h3>right</h3>
+            <p>오른쪽 박스이다.</p>
+        </div>
+    </div>
+</body>
+</html>

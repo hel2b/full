@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인정보입력</title>
+    <style>
+        ul li {list-style:none; padding:10px 0;}
+        /*
+        #m, #w, #a1, #a2, #j1, #j2, #j3, #j4 {display:none;}
+        #은 아이디 선택자, id 이름으로 박스를 선택한다.
+        */
+        input[type="radio"], input[type="checkbox"] {display:none;}
+        /* 속성 선택자 : 속성과 속성값으로 박스를 선택한다. */
+        .gender {padding:5px 10px; border:1px solid greenyellow;} /* . 은 클래스 선택자, class 이름으로 박스를 선택한다. */
+        input:checked + label {border:1px solid green;}
+        label {padding:5px 10px; border:1px solid lightblue;}
+        input:checked + label {border:1px solid blue;}
+    </style>
+</head>
+<body>
+    <h3>개인 정보 입력</h3>
+    <form>
+        <ul>
+            <li><input type="text" name="id" placeholder="아이디입력" required autofocus>
+            <button type="button">id 중복검사</button>
+            </li>
+            <li>
+            <label>생년월일</label>
+            <input type="date" name="birth" required>
+            </li>
+            <li>
+                성별:
+                <label>남자</label>
+                <input type="radio" name="gender" value="남자" checked>
+                <label>여자</label>
+                <input type="radio" name="gender" value="여자">
+            </li>
+            <li>
+                <input type="email" name="email" placeholder="email">
+            </li>
+            <li>
+                메일수신:
+                <label>동의</label>
+                <input type="radio" name="message" value="동의" checked>
+                <label>거부</label>
+                <input type="radio" name="message" value="거부">
+            </li>
+            <li>
+                <input type="tel" name="tel" placeholder="전화번호" required>
+            </li>
+            <li class="gjob">
+                직업:
+            <input type="checkbox" name="job" value="학생" checked>
+            <label>학생</label>
+            <input type="checkbox" name="job" value="회사원">
+            <label>회사원</label>
+            <input type="checkbox" name="job" value="연구원">
+            <label>연구원</label>
+            <input type="checkbox" name="job" value="영업">
+            <label>영업</label>
+        </li>
+    </li>
+    <li class="ghobby">
+        취미:
+    <input type="checkbox" name="hobby" value="쇼핑" checked>
+    <label>쇼핑</label>
+    <input type="checkbox" name="hobby" value="인터넷">
+    <label>인터넷</label>
+    <input type="checkbox" name="hobby" value="음악감상">
+    <label>음악감상</label>
+    <input type="checkbox" name="hobby" value="독서">
+    <label>독서</label>
+    <input type="checkbox" name="hobby" value="스포츠">
+    <label>스포츠</label>
+</li>
+<li>
+    <textarea name="info">자기소개</textarea>
+</li>
+        </ul>
+    </form>
+</body>
+</html>

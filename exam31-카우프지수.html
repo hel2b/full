@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            background:red;
+        }
+        .orange{
+            background:orange;
+        }
+        .green{
+            background:green;
+        }
+        .gray{
+            background:gray;
+        }
+        .black{
+            background:black;
+        }
+
+        .toggle{
+            color:darkred;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            $('#kbtn').click(function(){
+                var height=parseInt($('#kh').val()) / 100;
+                var weight=parseInt($('#kw').val());
+                var kaup=weight/(height*height);
+                var str='';
+//조건문
+//-단순 if, if else, if~ else if
+//if, else if - 조건문 중 가장 많이 사용하는 것.
+//if else - a or b(약자택일)
+//if else if - 여러개의 조건 설정이 가능
+//등급이 (골드,브론즈,실버) 일 때.
+                if(kaup>=30){
+                    str='고도비만.';
+                $('body').removeClass();
+                $('body').addClass('black');
+                //$('body').toggleClass('red')
+                //red클래스명이 있으면 제거하고 없으면 추가한다.
+            }
+                else if(kaup>=25){
+                    str='비만';
+                    $('body').removeClass();
+                $('body').addClass('red');
+                }
+                else if(kaup>=23){
+                    str='과체중';
+                    $('body').removeClass();
+                $('body').addClass('orange');
+                }
+                else if(kaup>=18){
+                    str='정상';
+                    $('body').removeClass();
+                $('body').addClass('green');
+                }
+                else{
+                    str='저체중';
+                    $('body').removeClass();
+                $('body').addClass('gray');
+                }
+
+                $('#k-result span').text(kaup);
+                $('#k-health span').text(str);
+
+            });
+            $('h3').click(function(){
+                $(this).toggleClass('toggle');
+            });
+
+
+        });
+        //큰 수부터 (수박) 15키로를 먼저.) 다음 10키로.
+        //> 부등호가 왼쪽이 더 클 시 속도가 더 빠르다.
+    </script>
+</head>
+<body>
+    <h3>카우프 지수에 따른 건강상태</h3>
+    <ul class="kaup">
+        <li><input type="number" placeholder="키(cm)입력" id="kh" autofocus required></li>
+        <li><input type="number" placeholder="몸무게(kg)입력" id="kw" required></li>
+        <li><button type=button id="kbtn">카우프 지수 계산</button></li>
+    </ul>
+    <div id="k-result">카우프 지수 :<span></span></div>
+    <div id="k-health">건강상태 :<span></span></div>
+
+
+    <style>
+        .box{
+            width:300px; height:300px; margin:10px 0;
+            background:orange;
+            text-align: center; line-height: 300px;
+        }
+    </style>
+
+
+    <div class="box big">BIG</div>
+    <div class="box small">SMALL</div>
+    <!--box-공통 스타일시트
+    big,small-개별-->
+
+    <script>
+        $('.big').click(function(){
+            var w=$(this).width();
+//big박스에 클릭 이벤트가 발생하면 big 박스의 너비값을 얻는다.
+            var h=$(this).height();
+//big박스에 클릭 이벤트가 발생하면 big 박스의 높이값을 얻는다
+            alert(w);
+            alert(h);
+            w += 50;//w=w+50; 값을 누적, 값의 총합, 복리 계산
+            h += 50;//h=h+50;
+
+            $('.big').width(w);
+            $('.big').height(h);    
+        });
+//big박스에 증가된 너비값과 높이값을 지정한다.
+
+        $('.small').click(function(){
+            var w=$(this).width();
+            var h=$(this).height();
+            alert(w);
+            alert(h);
+            w -= 25;
+            h -= 25;
+
+            $('.small').width(w);
+            $('.small').height(h);    
+        });
+    </script>
+</body>
+</html>

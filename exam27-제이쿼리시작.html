@@ -1,0 +1,79 @@
+<!--
+제이쿼리는 '자바스크립트 라이브러리' 이다.
+웹 표준(Web standard) 프로그래밍은 구조(structure)와 
+표현(style) 기능(functionally)으로 나누어져 있다.
+제이쿼리는 '요소를 조작'하거나 '이벤트(클릭,스크롤)를 처리' 하기 위해 사용한다.
+함수명() 메소드명()
+제이쿼리 힘수의 역할
+1. 요소를 선택.
+2. 요소를 생성.
+$('선택자'): 요소를 선택한다.
+객체.메소드명();
+$('<p>제이쿼리 시작</p>') : p요소를 생성.
+this: 현재 실행중인 객체.
+함수와 메소드의 명명규칙
+-첫글자는 소문자로 시작한다.
+-두 단어가 합쳐진 형태이면 두번째 단어의 첫 글자를 대문자로 작성한다.
+ex) addNumber(); -카멜 표기법
+-동사를 사용한다.
+매개변수 리피터(전달행자)
+파라미터- html()
+
+-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 시작</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        //$(document) : html 문서를 선택한다.
+        //ready(): 하드디스크에 있는 html 문서가 메모리로 완전히 로드된 상태를 인식한다.
+        //function(){}: 익명(이름이 없다) 함수는 {}안에 있는 명령어를 바로 실행하는 바로 실행 함수이다. 함수 선언의 기본문법은 function 함수명 (){} 인데, 익명함수는 함수명이 없는 함수이다.
+  
+        $(function(){
+            $('#hidebtn').click(function(){
+               var result = confirm('p요소를 안보이게 할까요?');
+               //유효성 검증
+                     //$(document).ready(function(){});
+        //ready - 이벤트 (등록)연결메소드.
+        //alert('메세지'); 경고창을 띄우는 함수
+//ex) alert('result'):변수에 저장된 값을 경고창에 출력하므로 변수에 저장된 값을 확인할 때 주로 사용한다.
+//confirm('메세지'):메세지를 출력하고 [확인]과 [취소]버튼을 출력하여 true 또는 false 값을 받을 때 사용
+//prompt('메세지'): 입력폼이 풀력된어 값을 받을 때 사용
+            if(result){
+            $('p').slideUp();//선택한 요소를 안보이게 한다.
+              //이벤트 효과 메소드: hide,fadeOut,slideUp
+                      //조건이 참(true)이면 {}안에 명령어를 실행한다. false는 적용(실행)하지 않음 (알고리즘) ex) 자율주행 (if 가정 변수)
+        //variable-변수 
+//(confirm)확인을 누르면 true, 취소를 누르면 false를 반환한다.
+//result는 변수로 메모리상에 있는 저장공간이다.
+            }
+        });
+//이벤트 처리:
+// -이벤트 대상(버튼,입력폼,웹브라우저)
+// -이벤트 등록 메소드로 연결(click,focus,mouseenter,mouseleave)
+// -익명함수의 {}내부에 실행할 명령어를(이벤트 효과 메소드) 작성한다.
+        $('#showBtn').click(function(){
+            alert('p요소를 보여줍니다.')
+            $('p').slideDown();//선택한 요소를 보이게 한다.
+        });
+        $('#inputBtn').click(function(){
+//입력폼에 입력된 텍스트를 p요소의 컨텐츠로 변경한다.
+    var msg=prompt('p요소의 컨텐츠를 변경할 텍스트를 입력하세요.');
+            $('p').text(msg);
+            //text('텍스트')는 선택한 요소에 텍스트를 넣는다.
+       //html('태그'):태그가 적용된다.
+       
+        })
+        });
+    </script>
+</head>
+<body>
+    <button type="button" id="hidebtn">버튼</button>
+    <button type="button" id="showBtn">SHOW</button>
+    <button type="button" id="inputBtn">INPUT</button>
+    <p>제이쿼리를 시작합니다. 이벤트 등록 메소드로 이벤트를 인식합니다.</p>
+</body>
+</html>
